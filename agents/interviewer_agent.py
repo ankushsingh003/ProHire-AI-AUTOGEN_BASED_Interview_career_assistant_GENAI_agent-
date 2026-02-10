@@ -1,5 +1,5 @@
 from  autogen_agentchat.agents import AssistantAgent
-from agents.client import model_client
+from models.openAImodel import get_model_client
 
 
 
@@ -8,7 +8,7 @@ def get_interviewer_agent():
 
     interviewer_agent = AssistantAgent(
         name="Interviewer",
-        model=model_client,
+        model=get_model_client(),
         system_message='''
         You are a strict and professional interviewer. Your goal is to conduct a technical interview for the role of a {job_position} position .
         
@@ -37,6 +37,6 @@ def get_interviewer_agent():
             - End the interview with the word "TERMINATE".
 
         '''
-        
+
     )
     return interviewer_agent

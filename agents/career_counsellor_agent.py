@@ -1,5 +1,5 @@
 from  autogen_agentchat.agents import AssistantAgent
-from agents.client import model_client
+from models.openAImodel import get_model_client
 
 
 
@@ -7,7 +7,7 @@ from agents.client import model_client
 def get_career_counsellor_agent():
     career_counsellor_agent = AssistantAgent(
         name="Career Counsellor",
-        model=model_client,
+        model= get_model_client(),
         system_message='''
         You are a career counsellor. Your goal is to provide career advice to the candidate for {job_position} position.
         1. **Role**: You are a career counsellor.
@@ -25,4 +25,3 @@ def get_career_counsellor_agent():
         '''
     )
     return career_counsellor_agent
-    
