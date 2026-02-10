@@ -1,7 +1,6 @@
-from AI_interview import team_config, interview 
 import asyncio
 from autogen_agentchat.messages import TextMessage
-from teams.travel_team import get_travel_team
+from team.travel_team import get_travel_team
 
 team = get_travel_team()
 

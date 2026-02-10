@@ -1,7 +1,6 @@
-from autogen_agentchat.utils import save_chat_history
 from autogen_agentchat.conditions import TextMentionTermination
 import json
-from config.settings import TERMINATE_MESSAGE , MAX_ROUND , MAX_TURN , MAX_TOKENS
+from config.settings import TERMINATE_MESSAGE
 
 terminate_condition = TextMentionTermination( text = TERMINATE_MESSAGE)
 
