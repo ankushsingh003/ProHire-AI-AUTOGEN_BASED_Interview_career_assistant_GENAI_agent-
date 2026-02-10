@@ -1,15 +1,18 @@
-
 from AI_interview import team_config, interview 
 import asyncio
+from autogen_agentchat.messages import TextMessage
+from teams.travel_team import get_travel_team
 
-
+team = get_travel_team()
 
 async def main():
     job_position = "software engineer"
-
-    team = await team_config(job_position)
-    async for message in interview(team):
-        print( "-" * 100)
+    task = TextMessage(
+        content = "start the interview with the first question",
+        source = "user"
+    )
+    result = await team.run(task =task)
+    for message in result:
         print(message)
 
 if __name__ == "__main__":
